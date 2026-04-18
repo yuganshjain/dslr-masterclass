@@ -267,7 +267,7 @@ function ExposureSimulator() {
 
   const brightness = Math.max(0.02, Math.min(3.5, Math.pow(2, diff)));
   const saturation = diff > 1.5 ? Math.max(0.25, 1 - (diff - 1.5) * 0.28) : diff < -2.5 ? Math.max(0.4, 1 + (diff + 2.5) * 0.15) : 1;
-  const contrast   = diff > 1 ? Math.max(0.55, 1 - (diff - 1) * 0.16) : 1;
+  const contrast   = diff > 1 ? Math.max(0.55, 1 - (diff - 1) * 0.16) : diff < -2 ? Math.max(0.7, 1 + (diff + 2) * 0.08) : 1;
   const noiseOp    = iso <= 1 ? 0 : iso <= 3 ? (iso - 1) * 0.025 : 0.05 + (iso - 3) * 0.065;
   const mBlurPx    = shutter <= 5 ? 0 : Math.min(14, (shutter - 5) * 2.5);
 
@@ -395,7 +395,7 @@ const WB_PRESETS = [
   { name: 'Daylight',    icon: '☀', kelvin: 5500, filter: 'sepia(0.08) hue-rotate(3deg) saturate(1.05)' },
   { name: 'Cloudy',      icon: '⛅', kelvin: 6500, filter: 'sepia(0.18) hue-rotate(-6deg) saturate(1.12) brightness(1.03)' },
   { name: 'Shade',       icon: '🌥', kelvin: 7500, filter: 'sepia(0.25) hue-rotate(-12deg) saturate(1.18) brightness(1.05)' },
-  { name: 'Tungsten',    icon: '💡', kelvin: 3200, filter: 'sepia(0.5) hue-rotate(-28deg) saturate(1.4) brightness(1.08)' },
+  { name: 'Tungsten',    icon: '💡', kelvin: 3200, filter: 'sepia(0.5) hue-rotate(180deg) saturate(1.5) brightness(0.93)' },
   { name: 'Fluorescent', icon: '🔆', kelvin: 4000, filter: 'hue-rotate(18deg) saturate(0.9) brightness(1.04)' },
   { name: 'Flash',       icon: '⚡', kelvin: 5800, filter: 'hue-rotate(6deg) saturate(0.97) brightness(1.03)' },
 ];
@@ -513,7 +513,7 @@ function WhiteBalanceSimulator() {
         <div className={styles.statsGrid}>
           <StatBadge icon="◑" label="White Balance"   value={mode === 'preset' ? WB_PRESETS[preset].name : `${kelvin}K`} color="#f5a623" />
           <StatBadge icon="🌡" label="Colour Temp"    value={`${activeKelvin}K`}  color="#22d3ee" />
-          <StatBadge icon="◐" label="Tone"            value={activeKelvin < 4500 ? 'Very Warm' : activeKelvin < 5500 ? 'Warm' : activeKelvin < 6500 ? 'Neutral' : activeKelvin < 7500 ? 'Cool' : 'Very Cool'} color="#e879f9" />
+          <StatBadge icon="◐" label="Tone"            value={activeKelvin < 4500 ? 'Very Cool' : activeKelvin < 5500 ? 'Cool' : activeKelvin < 6500 ? 'Neutral' : activeKelvin < 7500 ? 'Warm' : 'Very Warm'} color="#e879f9" />
           <StatBadge icon="⬡" label="Use Case"        value={activeKelvin < 3500 ? 'Indoors / Candle' : activeKelvin < 5500 ? 'Indoor / Mixed' : activeKelvin < 7000 ? 'Outdoors / Sun' : 'Shade / Overcast'} color="#22c55e" />
         </div>
 
