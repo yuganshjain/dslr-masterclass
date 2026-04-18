@@ -1,0 +1,24 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:center}
+  .box{border:1px solid var(--border);border-radius:var(--radius2);padding:16px;background:var(--card)}
+  .label{font-family:var(--font-mono);font-size:10px;color:var(--text3);margin-bottom:8px;letter-spacing:0.3px;text-transform:uppercase}
+  .mono{font-family:var(--font-mono)}
+  .big{font-size:28px;font-weight:500}
+</style></head><body>
+<div class="grid">
+  <div class="box">
+    <div class="label">JetBrains Mono — HUD readouts</div>
+    <div class="mono big" style="color:#f5a623">f/2.8</div>
+    <div class="mono big" style="color:#22d3ee">1/250</div>
+    <div class="mono big" style="color:#e879f9">ISO 400</div>
+  </div>
+  <div class="box">
+    <div class="label">JetBrains Mono — inline code</div>
+    <div style="font-size:14px;line-height:1.7"><code class="mono" style="background:var(--bg3);padding:2px 6px;border-radius:4px;color:var(--accent2)">--accent: #7c6ff7;</code></div>
+    <div style="font-size:14px;line-height:1.7;margin-top:6px"><code class="mono" style="background:var(--bg3);padding:2px 6px;border-radius:4px;color:var(--accent2)">radius: 14px;</code></div>
+  </div>
+</div>
+</body></html>

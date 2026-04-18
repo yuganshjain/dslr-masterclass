@@ -1,0 +1,496 @@
+.tabs {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 32px;
+}
+
+.tab {
+  padding: 9px 20px;
+  border-radius: var(--radius2);
+  font-size: 14px;
+  font-weight: 600;
+  color: var(--text2);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.tab:hover { color: var(--text); border-color: var(--border2); }
+.tabActive  { color: var(--accent2); background: rgba(124,111,247,0.1); border-color: rgba(124,111,247,0.4); }
+
+.content { }
+
+/* ─── Filters ─── */
+.filterRow {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  margin-bottom: 24px;
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 20px;
+}
+
+.filterGroup {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  flex-wrap: wrap;
+}
+
+.filterLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  min-width: 52px;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.filterBtns {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.filterBtn {
+  padding: 5px 14px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text2);
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.filterBtn:hover { border-color: var(--border2); color: var(--text); }
+.filterBtnActive { background: rgba(124,111,247,0.12); border-color: rgba(124,111,247,0.4); color: var(--accent2); font-weight: 600; }
+
+.resultsCount {
+  font-size: 13px;
+  color: var(--text3);
+  margin-bottom: 16px;
+}
+
+/* ─── Camera Grid ─── */
+.cameraGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+}
+
+.cameraCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 20px;
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.cameraCard:hover { border-color: var(--border2); }
+
+.cameraCardTop {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 8px;
+}
+
+.brandBadge {
+  padding: 3px 10px;
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+  border: 1px solid;
+  letter-spacing: 0.3px;
+}
+
+.cameraType {
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.cameraName {
+  font-size: 17px;
+  font-weight: 800;
+  letter-spacing: -0.3px;
+  color: var(--text);
+}
+
+.cameraYear {
+  font-size: 12px;
+  color: var(--text3);
+  margin-top: -6px;
+}
+
+.cameraSpecRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+}
+
+.cameraSpec {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--text2);
+  background: var(--bg3);
+  padding: 4px 10px;
+  border-radius: 99px;
+}
+
+.specIcon { font-size: 11px; color: var(--accent2); }
+
+.cameraFeatures {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.featureTag {
+  padding: 3px 8px;
+  background: rgba(124,111,247,0.1);
+  color: var(--accent2);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.cameraVerdict {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.5;
+}
+
+.cameraBestFor {
+  display: flex;
+  gap: 5px;
+  flex-wrap: wrap;
+}
+
+.bestForTag {
+  padding: 2px 8px;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 99px;
+  font-size: 11px;
+  color: var(--text3);
+}
+
+.expandBtn {
+  background: transparent;
+  border: 1px solid var(--border);
+  color: var(--text3);
+  border-radius: var(--radius2);
+  padding: 6px 12px;
+  font-size: 12px;
+  cursor: pointer;
+  transition: all 0.15s;
+  align-self: flex-start;
+  margin-top: 4px;
+}
+
+.expandBtn:hover { border-color: var(--accent2); color: var(--accent2); }
+
+.expandedSpecs {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  background: var(--bg3);
+  border-radius: var(--radius2);
+  padding: 14px;
+}
+
+.specRow {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 13px;
+  gap: 12px;
+}
+
+.specRowLabel {
+  color: var(--text3);
+  flex-shrink: 0;
+}
+
+.specRowValue {
+  color: var(--text);
+  font-weight: 600;
+  text-align: right;
+}
+
+.cameraPrice {
+  font-size: 20px;
+  font-weight: 900;
+  color: var(--accent2);
+  letter-spacing: -0.5px;
+  margin-top: auto;
+}
+
+.emptyState {
+  text-align: center;
+  color: var(--text3);
+  padding: 60px 0;
+  font-size: 15px;
+}
+
+/* ─── Compare ─── */
+.comparePickers {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 16px;
+  margin-bottom: 28px;
+}
+
+.comparePicker {}
+
+.comparePickerLabel {
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  margin-bottom: 8px;
+}
+
+.compareSelect {
+  width: 100%;
+  padding: 10px 14px;
+  background: var(--bg2);
+  border: 1px solid var(--border2);
+  border-radius: var(--radius2);
+  color: var(--text);
+  font-size: 14px;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.compareSelect:focus { outline: none; border-color: var(--accent2); }
+
+.compareTable {
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  overflow: hidden;
+}
+
+.compareHeader {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  background: var(--bg3);
+  border-bottom: 1px solid var(--border2);
+}
+
+.compareHeaderSpec {
+  padding: 14px 18px;
+  font-size: 12px;
+  font-weight: 700;
+  color: var(--text3);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.compareHeaderCam {
+  padding: 14px 18px;
+  border-left: 1px solid var(--border);
+}
+
+.compareHeaderName {
+  font-size: 14px;
+  font-weight: 800;
+  color: var(--text);
+}
+
+.compareHeaderSub {
+  font-size: 12px;
+  color: var(--text3);
+  margin-top: 2px;
+}
+
+.compareRow {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr 1fr;
+  border-bottom: 1px solid var(--border);
+}
+
+.compareRow:last-child { border-bottom: none; }
+
+.compareRowLabel {
+  padding: 12px 18px;
+  font-size: 13px;
+  color: var(--text3);
+  font-weight: 500;
+  display: flex;
+  align-items: center;
+}
+
+.compareCell {
+  padding: 12px 18px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  border-left: 1px solid var(--border);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  transition: background 0.15s;
+}
+
+.compareCellWin {
+  background: rgba(34,197,94,0.08);
+  color: var(--green);
+}
+
+.compareCellTie {
+  background: rgba(124,111,247,0.06);
+}
+
+.winBadge {
+  font-size: 11px;
+  font-weight: 800;
+  color: var(--green);
+  background: rgba(34,197,94,0.15);
+  padding: 2px 6px;
+  border-radius: 99px;
+  flex-shrink: 0;
+}
+
+/* ─── Lens Guide ─── */
+.lensCategoryRow {
+  display: flex;
+  gap: 8px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lensCatBtn {
+  padding: 8px 18px;
+  border-radius: 99px;
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  cursor: pointer;
+  transition: all 0.15s;
+}
+
+.lensCatBtn:hover { border-color: var(--border2); color: var(--text); }
+.lensCatBtnActive { font-weight: 700; }
+
+.lensCategoryInfo {
+  background: var(--bg2);
+  border: 1px solid;
+  border-radius: var(--radius2);
+  padding: 16px 20px;
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lensCatFov {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text2);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.lensCatTip {
+  font-size: 13px;
+  color: var(--text2);
+  line-height: 1.55;
+  margin: 0;
+}
+
+.lensBrandRow {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+  margin-bottom: 20px;
+}
+
+.lensGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+  gap: 14px;
+}
+
+.lensCard {
+  background: var(--bg2);
+  border: 1px solid var(--border);
+  border-radius: var(--radius2);
+  padding: 18px;
+  transition: border-color 0.2s;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.lensCard:hover { border-color: var(--border2); }
+
+.lensCardTop {
+  display: flex;
+  gap: 6px;
+  flex-wrap: wrap;
+}
+
+.lensMountBadge {
+  padding: 3px 9px;
+  background: rgba(124,111,247,0.1);
+  color: var(--accent2);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 700;
+}
+
+.lensTypeBadge {
+  padding: 3px 9px;
+  background: var(--bg3);
+  color: var(--text3);
+  border-radius: 99px;
+  font-size: 11px;
+  font-weight: 600;
+}
+
+.lensName {
+  font-size: 14px;
+  font-weight: 700;
+  color: var(--text);
+  line-height: 1.3;
+}
+
+.lensNote {
+  font-size: 12px;
+  color: var(--text2);
+  line-height: 1.5;
+  flex: 1;
+}
+
+.lensPrice {
+  font-size: 17px;
+  font-weight: 800;
+  color: var(--accent2);
+  margin-top: 4px;
+}
+
+@media (max-width: 600px) {
+  .comparePickers { grid-template-columns: 1fr; }
+  .compareHeader,
+  .compareRow { grid-template-columns: 1fr 1fr; }
+  .compareHeaderSpec,
+  .compareRowLabel { display: none; }
+  .compareCell:first-of-type { border-left: none; }
+}

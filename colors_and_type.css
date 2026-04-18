@@ -1,0 +1,161 @@
+/* ============================================================
+   DSLR Masterclass — Colors & Type
+   Sourced directly from source/index.css and source/App.css
+   ============================================================ */
+
+/* Webfonts: loaded from Google Fonts (Inter + JetBrains Mono) */
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500&display=swap');
+
+:root {
+  /* ----- Surfaces / backgrounds ----- */
+  --bg: #08080e;         /* page background — near-black with a hint of violet */
+  --bg2: #0f0f18;        /* section bg (footer, quick-links band) */
+  --bg3: #16161f;        /* subtle inset (input chips, ghost-btn hover) */
+  --card: #13131c;       /* default card surface */
+  --card2: #1a1a26;      /* elevated card / hover surface */
+
+  /* ----- Borders / dividers ----- */
+  --border: #252535;     /* default 1px border */
+  --border2: #353550;    /* hover / focus border */
+
+  /* ----- Foreground / text ----- */
+  --text: #eeeef8;       /* primary text */
+  --text2: #9898b8;      /* secondary text — body copy, subtitles */
+  --text3: #55556a;      /* tertiary text — captions, muted meta */
+
+  /* ----- Brand accent (violet) ----- */
+  --accent: #7c6ff7;     /* primary — buttons, active states */
+  --accent2: #9d97ff;    /* lighter — hover / glow / logo accent */
+  --accent3: #5548d4;    /* darker — press / deep shadow tint */
+
+  /* ----- Semantic / difficulty ----- */
+  --gold: #f5a623;       /* intermediate, shutter speed, warnings */
+  --gold2: #ffbe55;
+  --green: #22c55e;      /* beginner, success */
+  --green2: #16a34a;
+  --red: #ef4444;        /* advanced, error */
+  --red2: #dc2626;
+
+  /* ----- Accent spectrum (module gradients, chart series) ----- */
+  --cyan: #22d3ee;       /* shutter speed, secondary gradient */
+  --pink: #e879f9;       /* ISO, tertiary gradient */
+  --orange: #fb923c;
+
+  /* ----- Radii ----- */
+  --radius: 14px;        /* default card */
+  --radius2: 8px;        /* buttons, inputs */
+  --radius3: 20px;       /* pills, large cards */
+
+  /* ----- Elevation ----- */
+  --shadow: 0 8px 32px rgba(0,0,0,0.5);    /* card hover */
+  --shadow2: 0 2px 12px rgba(0,0,0,0.35);  /* subtle lift */
+  --glow-accent: 0 4px 16px rgba(124,111,247,0.4);
+
+  /* ----- Signature gradients ----- */
+  --grad-brand: linear-gradient(135deg, #9d97ff 0%, #22d3ee 100%);   /* headline gradient-text */
+  --grad-gold:  linear-gradient(135deg, #f5a623 0%, #ffbe55 100%);
+  --grad-progress: linear-gradient(90deg, #7c6ff7, #22d3ee);
+
+  /* ----- Ambient background wash (used on Home) ----- */
+  --wash-bg:
+    radial-gradient(ellipse 60% 50% at 20% 40%, rgba(124,111,247,0.08) 0%, transparent 60%),
+    radial-gradient(ellipse 40% 40% at 80% 60%, rgba(34,211,238,0.05) 0%, transparent 60%);
+
+  /* ----- Type — family ----- */
+  --font-sans: 'Inter', system-ui, -apple-system, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Courier New', monospace;
+
+  /* ----- Type — display scale (tight tracking, heavy weights) ----- */
+  --fs-display:   clamp(36px, 5.5vw, 64px);   /* hero titles */
+  --fs-h1:        clamp(28px, 5vw, 48px);     /* page-header h1 */
+  --fs-h2:        32px;                        /* section headers */
+  --fs-h3:        18px;                        /* card titles (simulator, quick) */
+  --fs-h4:        17px;                        /* card titles (module) */
+  --fs-body:      15px;                        /* default body */
+  --fs-body-lg:   17px;                        /* lead copy */
+  --fs-sub:       13px;                        /* subtitles, meta */
+  --fs-caption:   12px;                        /* duration, footer meta */
+  --fs-overline:  11px;                        /* topic chips */
+
+  --lh-tight: 1.08;   /* hero */
+  --lh-snug:  1.15;
+  --lh-normal: 1.55;  /* card summaries */
+  --lh-body:   1.6;   /* body */
+  --lh-relaxed:1.65;  /* lead */
+
+  --tr-tightest: -2px;   /* hero */
+  --tr-tighter:  -1px;   /* h1 / big numerals */
+  --tr-tight:    -0.8px; /* h2 */
+  --tr-snug:     -0.3px; /* card titles */
+  --tr-wide:      0.3px; /* badges, overline */
+}
+
+/* ============================================================
+   SEMANTIC TYPE RULES
+   Applied via utility classes; existing source uses scoped css-
+   modules, so these are additive.
+   ============================================================ */
+
+body {
+  font-family: var(--font-sans);
+  font-size: var(--fs-body);
+  line-height: var(--lh-body);
+  color: var(--text);
+  background: var(--bg);
+  -webkit-font-smoothing: antialiased;
+}
+
+.display,
+h1.display {
+  font-size: var(--fs-display);
+  font-weight: 900;
+  line-height: var(--lh-tight);
+  letter-spacing: var(--tr-tightest);
+}
+
+h1, .h1 {
+  font-size: var(--fs-h1);
+  font-weight: 800;
+  line-height: var(--lh-snug);
+  letter-spacing: var(--tr-tighter);
+}
+
+h2, .h2 {
+  font-size: var(--fs-h2);
+  font-weight: 800;
+  letter-spacing: var(--tr-tight);
+}
+
+h3, .h3 {
+  font-size: var(--fs-h3);
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: var(--tr-snug);
+}
+
+h4, .h4 {
+  font-size: var(--fs-h4);
+  font-weight: 700;
+  letter-spacing: var(--tr-snug);
+}
+
+p, .body   { font-size: var(--fs-body);    color: var(--text);  line-height: var(--lh-body); }
+.lead      { font-size: var(--fs-body-lg); color: var(--text2); line-height: var(--lh-relaxed); }
+.sub       { font-size: var(--fs-sub);     color: var(--text2); }
+.caption   { font-size: var(--fs-caption); color: var(--text3); }
+.overline  { font-size: var(--fs-overline); letter-spacing: var(--tr-wide); font-weight: 600; text-transform: none; color: var(--text3); }
+
+code, .mono, .code {
+  font-family: var(--font-mono);
+  font-size: 0.95em;
+}
+
+/* ----- Signature gradient text (hero accent line) ----- */
+.gradient-text {
+  background: var(--grad-brand);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}
+.gold-text {
+  background: var(--grad-gold);
+  -webkit-background-clip: text; -webkit-text-fill-color: transparent; background-clip: text;
+}

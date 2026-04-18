@@ -1,0 +1,236 @@
+.quizHeader {
+  margin-bottom: 28px;
+}
+
+.quizProgress {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.quizCount, .quizScore {
+  font-size: 13px;
+  font-weight: 600;
+  color: var(--text3);
+  white-space: nowrap;
+  font-family: 'JetBrains Mono', monospace;
+}
+
+/* Question Card */
+.questionCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius3);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.qMeta { display: flex; align-items: center; gap: 10px; }
+
+.qCategory {
+  font-size: 12px;
+  color: var(--text3);
+  font-weight: 600;
+  background: var(--bg3);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 3px 10px;
+}
+
+.qText {
+  font-size: 20px;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: -0.3px;
+}
+
+/* Options */
+.options { display: flex; flex-direction: column; gap: 10px; }
+
+.option {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  padding: 14px 18px;
+  background: var(--bg3);
+  border: 1.5px solid var(--border);
+  border-radius: var(--radius2);
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+}
+
+.option:hover:not(:disabled) { border-color: var(--accent); background: rgba(124,111,247,0.07); }
+.option:disabled { cursor: default; }
+
+.option-idle { }
+.option-correct { border-color: var(--green) !important; background: rgba(34,197,94,0.1) !important; }
+.option-wrong { border-color: var(--red) !important; background: rgba(239,68,68,0.1) !important; }
+.option-dim { opacity: 0.4; }
+
+.optLetter {
+  width: 30px; height: 30px;
+  border-radius: 50%;
+  background: var(--border);
+  display: flex; align-items: center; justify-content: center;
+  font-size: 12px;
+  font-weight: 700;
+  flex-shrink: 0;
+  color: var(--text2);
+}
+
+.option-correct .optLetter { background: var(--green); color: white; }
+.option-wrong .optLetter { background: var(--red); color: white; }
+
+.optText { font-size: 15px; font-weight: 500; flex: 1; }
+.optIcon { font-size: 16px; font-weight: 700; flex-shrink: 0; }
+.option-correct .optIcon { color: var(--green); }
+.option-wrong .optIcon { color: var(--red); }
+
+/* Explanation */
+.explanation {
+  border-radius: var(--radius2);
+  padding: 16px 18px;
+  font-size: 14px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.explCorrect { background: rgba(34,197,94,0.08); border: 1px solid rgba(34,197,94,0.25); color: var(--text2); }
+.explWrong { background: rgba(239,68,68,0.08); border: 1px solid rgba(239,68,68,0.25); color: var(--text2); }
+.explanation strong { color: var(--text); }
+.explanation p { margin: 0; }
+
+/* Setup */
+.setupCard {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius3);
+  padding: 32px;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  margin-bottom: 20px;
+}
+
+.setupTitle { font-size: 17px; font-weight: 700; }
+
+.catGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.catBtn {
+  padding: 8px 16px;
+  border-radius: 20px;
+  border: 1.5px solid var(--border);
+  background: var(--bg3);
+  color: var(--text2);
+  font-size: 13px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.catBtn:hover { border-color: var(--border2); color: var(--text); }
+.catActive { background: rgba(124,111,247,0.12); border-color: var(--accent); color: var(--accent2); }
+
+.setupInfo {
+  display: flex;
+  justify-content: space-between;
+  font-size: 13px;
+  color: var(--text3);
+  padding: 12px 0;
+  border-top: 1px solid var(--border);
+}
+
+.setupTips {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.setupTip {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  color: var(--text2);
+}
+
+/* Results */
+.results {
+  background: var(--card);
+  border: 1px solid var(--border);
+  border-radius: var(--radius3);
+  padding: 40px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 12px;
+  text-align: center;
+  margin-bottom: 32px;
+}
+
+.scoreCircle {
+  width: 120px; height: 120px;
+  border-radius: 50%;
+  border: 4px solid;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.scoreNum { font-size: 36px; font-weight: 900; letter-spacing: -2px; }
+.scoreLabel { font-size: 12px; color: var(--text3); font-weight: 600; text-transform: uppercase; letter-spacing: 0.5px; }
+
+.gradeLabel { font-size: 24px; font-weight: 800; }
+.scoreSub { color: var(--text2); font-size: 15px; }
+
+/* Review */
+.reviewList { display: flex; flex-direction: column; gap: 12px; }
+
+.reviewItem {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 16px;
+}
+
+.reviewCorrect { border-color: rgba(34,197,94,0.3); background: rgba(34,197,94,0.04); }
+.reviewWrong { border-color: rgba(239,68,68,0.25); background: rgba(239,68,68,0.04); }
+
+.reviewTop { display: flex; gap: 12px; align-items: flex-start; margin-bottom: 10px; }
+.reviewIcon { font-size: 16px; font-weight: 700; flex-shrink: 0; margin-top: 1px; }
+.reviewCorrect .reviewIcon { color: var(--green); }
+.reviewWrong .reviewIcon { color: var(--red); }
+.reviewQ { font-size: 14px; font-weight: 600; color: var(--text); }
+
+.reviewAnswers { padding-left: 28px; font-size: 13px; display: flex; flex-direction: column; gap: 4px; }
+.reviewYours { color: var(--red); }
+.reviewCorrectAns { color: var(--green); }
+.reviewExpl { color: var(--text2); line-height: 1.55; margin-top: 4px; }
+
+.bestScore {
+  display: flex;
+  align-items: center;
+  gap: 14px;
+  background: rgba(245,166,35,0.08);
+  border: 1px solid rgba(245,166,35,0.25);
+  border-radius: var(--radius2);
+  padding: 14px 18px;
+  margin-bottom: 4px;
+}
+.bestScoreIcon { font-size: 28px; }
+.bestScoreLabel { font-size: 11px; color: var(--text3); font-weight: 700; text-transform: uppercase; letter-spacing: 0.5px; margin-bottom: 4px; }
+.bestScoreVal { font-size: 16px; font-weight: 800; color: var(--gold); font-family: 'JetBrains Mono', monospace; }

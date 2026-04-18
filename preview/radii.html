@@ -1,0 +1,19 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:24px;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .box{border:1px solid var(--border);border-radius:var(--radius);background:var(--card);padding:18px;display:flex;flex-direction:column;gap:8px}
+  .rad{height:48px;background:var(--bg3);border:1px solid var(--border2)}
+  .r8{border-radius:8px}
+  .r14{border-radius:14px}
+  .r20{border-radius:20px}
+  .name{font-size:12px;font-weight:600;color:var(--text)}
+  .desc{font-size:11px;color:var(--text3);font-family:var(--font-mono)}
+</style></head><body>
+<div class="grid">
+  <div class="box"><div class="rad r8"></div><div class="name">radius2 · 8px</div><div class="desc">buttons, inputs, nav links</div></div>
+  <div class="box"><div class="rad r14"></div><div class="name">radius · 14px</div><div class="desc">cards, stats, module cards</div></div>
+  <div class="box"><div class="rad r20"></div><div class="name">radius3 · 20px</div><div class="desc">badges, pills, chips</div></div>
+</div>
+</body></html>

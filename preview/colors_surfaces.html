@@ -1,0 +1,22 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+  .swatch{border-radius:var(--radius2);border:1px solid var(--border);overflow:hidden;display:flex;flex-direction:column}
+  .chip{height:72px}
+  .meta{padding:8px 10px;display:flex;justify-content:space-between;align-items:baseline;gap:6px}
+  .name{font-size:12px;font-weight:600;color:var(--text)}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--text3)}
+</style></head><body>
+<div class="grid">
+  <div class="swatch"><div class="chip" style="background:#08080e"></div><div class="meta"><span class="name">bg</span><span class="hex">#08080e</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#0f0f18"></div><div class="meta"><span class="name">bg2</span><span class="hex">#0f0f18</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#16161f"></div><div class="meta"><span class="name">bg3</span><span class="hex">#16161f</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#13131c"></div><div class="meta"><span class="name">card</span><span class="hex">#13131c</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#1a1a26"></div><div class="meta"><span class="name">card2</span><span class="hex">#1a1a26</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#252535"></div><div class="meta"><span class="name">border</span><span class="hex">#252535</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#353550"></div><div class="meta"><span class="name">border2</span><span class="hex">#353550</span></div></div>
+  <div class="swatch"><div class="chip" style="background:#eeeef8"></div><div class="meta"><span class="name">text</span><span class="hex">#eeeef8</span></div></div>
+</div>
+</body></html>

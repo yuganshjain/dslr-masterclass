@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <title>DSLR Masterclass — UI Kit</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="../../colors_and_type.css">
+  <style>
+    html,body{margin:0;background:#08080e;color:#eeeef8;min-height:100vh}
+    #root{min-height:100vh;display:flex;flex-direction:column}
+    body::before{content:'';position:fixed;inset:0;pointer-events:none;z-index:-1;
+      background:
+        radial-gradient(ellipse 60% 50% at 20% 40%,rgba(124,111,247,0.08) 0%,transparent 60%),
+        radial-gradient(ellipse 40% 40% at 80% 60%,rgba(34,211,238,0.05) 0%,transparent 60%);
+    }
+  </style>
+  <script src="https://unpkg.com/react@18.3.1/umd/react.development.js" integrity="sha384-hD6/rw4ppMLGNu3tX5cjIb+uRZ7UkRJ6BPkLpg4hAu/6onKUg4lLsHAs9EBPT82L" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.development.js" integrity="sha384-u6aeetuaXnQ38mYT8rp6sbXaQe3NL9t+IBXmnYxwkUI2Hw4bsp2Wvmx4yRQF1uAm" crossorigin="anonymous"></script>
+  <script src="https://unpkg.com/@babel/standalone@7.29.0/babel.min.js" integrity="sha384-m08KidiNqLdpJqLq95G/LEi8Qvjl/xUYll3QILypMoQ65QorJ9Lvtp2RXYGBFj1y" crossorigin="anonymous"></script>
+</head>
+<body>
+  <div id="root"></div>
+  <script type="text/babel" src="Button.jsx"></script>
+  <script type="text/babel" src="Badge.jsx"></script>
+  <script type="text/babel" src="Navbar.jsx"></script>
+  <script type="text/babel" src="Hero.jsx"></script>
+  <script type="text/babel" src="StatsRow.jsx"></script>
+  <script type="text/babel" src="ModuleCard.jsx"></script>
+  <script type="text/babel" src="ModuleGrid.jsx"></script>
+  <script type="text/babel" src="SearchBar.jsx"></script>
+  <script type="text/babel" src="SimCard.jsx"></script>
+  <script type="text/babel" src="Pages.jsx"></script>
+  <script type="text/babel">
+    function App() {
+      const [route, setRoute] = React.useState('/');
+      const [mod, setMod] = React.useState(null);
+      const onNav = (path, m) => { setRoute(path); if (m) setMod(m); window.scrollTo(0, 0); };
+      const activeTop = route.startsWith('/modules') ? '/modules' : route;
+      return (
+        <div data-screen-label={route}>
+          <Navbar active={activeTop} onNav={onNav} />
+          <main style={{ flex: 1 }}>
+            {route === '/' && <HomePage onNav={onNav} />}
+            {route === '/modules' && <ModulesPage onNav={onNav} />}
+            {route.startsWith('/modules/') && <ModuleDetailPage mod={mod} onNav={onNav} />}
+            {route === '/quiz' && <QuizPage onNav={onNav} />}
+            {!['/','/quiz'].includes(route) && !route.startsWith('/modules') && (
+              <div style={{ maxWidth:720, margin:'120px auto', textAlign:'center', color:'#9898b8' }}>
+                <h1 style={{ fontSize:32, fontWeight:800, color:'#eeeef8', marginBottom:12 }}>{route.slice(1) || 'Home'}</h1>
+                <p>This route is in the kit but not wired up in this prototype.</p>
+                <div style={{ marginTop:24 }}><Button onClick={() => onNav('/')}>Back home →</Button></div>
+              </div>
+            )}
+          </main>
+          <footer style={{ textAlign:'center', padding:24, color:'#55556a', fontSize:13, borderTop:'1px solid #252535', background:'#0f0f18' }}>
+            📷 DSLR Masterclass — Built for photographers, by photographers · 2025
+          </footer>
+        </div>
+      );
+    }
+    ReactDOM.createRoot(document.getElementById('root')).render(<App />);
+  </script>
+</body>
+</html>

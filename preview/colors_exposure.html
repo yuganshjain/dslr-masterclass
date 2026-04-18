@@ -1,0 +1,25 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+  .sw{border-radius:var(--radius2);border:1px solid var(--border);overflow:hidden}
+  .chip{height:58px;display:flex;align-items:flex-end;padding:8px 10px;color:#0b0b10;font-family:var(--font-mono);font-size:11px;font-weight:700}
+  .meta{padding:7px 10px;display:flex;justify-content:space-between;background:var(--card)}
+  .name{font-size:12px;font-weight:600}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--text3)}
+  .hud{margin-top:12px;display:flex;gap:10px;padding:10px;border:1px solid var(--border);border-radius:var(--radius2);background:var(--card)}
+  .pill{display:inline-flex;align-items:center;gap:6px;padding:5px 12px;border-radius:20px;background:rgba(13,13,26,0.85);border:1px solid var(--border);font-family:var(--font-mono);font-size:12px;font-weight:600}
+  .dot{width:7px;height:7px;border-radius:50%}
+</style></head><body>
+<div class="grid">
+  <div class="sw"><div class="chip" style="background:#f5a623">gold</div><div class="meta"><span class="name">aperture</span><span class="hex">#f5a623</span></div></div>
+  <div class="sw"><div class="chip" style="background:#22d3ee">cyan</div><div class="meta"><span class="name">shutter</span><span class="hex">#22d3ee</span></div></div>
+  <div class="sw"><div class="chip" style="background:#e879f9">pink</div><div class="meta"><span class="name">ISO</span><span class="hex">#e879f9</span></div></div>
+</div>
+<div class="hud">
+  <span class="pill"><span class="dot" style="background:#f5a623"></span>f/2.8</span>
+  <span class="pill"><span class="dot" style="background:#22d3ee"></span>1/250s</span>
+  <span class="pill"><span class="dot" style="background:#e879f9"></span>ISO 400</span>
+</div>
+</body></html>

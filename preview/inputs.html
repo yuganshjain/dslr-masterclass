@@ -1,0 +1,48 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);color:var(--text);font-family:var(--font-sans);display:flex;flex-direction:column;gap:14px}
+  .lbl{font-family:var(--font-mono);font-size:10px;color:var(--text3);letter-spacing:0.4px;text-transform:uppercase;margin-bottom:6px}
+  .row{display:flex;gap:10px;align-items:center}
+  .sr{position:relative;flex:1}
+  .ic{position:absolute;left:14px;top:50%;transform:translateY(-50%);color:var(--text3);font-size:18px}
+  .x{position:absolute;right:12px;top:50%;transform:translateY(-50%);color:var(--text3);cursor:pointer;font-size:12px}
+  input,select,textarea{width:100%;padding:11px 14px;background:var(--card);border:1px solid var(--border);border-radius:8px;color:var(--text);font-size:15px;outline:none;font-family:inherit;transition:border-color 0.2s}
+  input.search{padding-left:40px;padding-right:36px}
+  input.focus{border-color:var(--accent)}
+  input::placeholder{color:var(--text3)}
+  .chips{display:flex;gap:8px;flex-wrap:wrap}
+  .chip{padding:8px 16px;border-radius:20px;border:1px solid var(--border);background:var(--card);color:var(--text2);font-size:13px;font-weight:600;cursor:pointer;transition:all 0.2s}
+  .chip:hover{border-color:var(--border2);color:var(--text)}
+  .chip.active{background:#7c6ff7;border-color:#7c6ff7;color:#fff}
+  .select-wrap{position:relative;flex:1}
+  .select-wrap::after{content:'▾';position:absolute;right:14px;top:50%;transform:translateY(-50%);color:var(--text3);pointer-events:none;font-size:12px}
+  select{appearance:none;-webkit-appearance:none;padding-right:32px;background:var(--card)}
+  .toggle{display:inline-flex;align-items:center;gap:10px;cursor:pointer}
+  .switch{width:36px;height:20px;background:var(--border);border-radius:20px;position:relative;transition:background 0.2s}
+  .switch.on{background:#7c6ff7}
+  .knob{position:absolute;top:2px;left:2px;width:16px;height:16px;background:#fff;border-radius:50%;transition:left 0.2s}
+  .switch.on .knob{left:18px}
+  .cap{font-size:13px;color:var(--text2)}
+</style></head><body>
+<div><div class="lbl">Search — default / focus</div>
+  <div class="row">
+    <div class="sr"><span class="ic">⌕</span><input class="search" placeholder="Search modules..."></div>
+    <div class="sr"><span class="ic">⌕</span><input class="search focus" value="aperture"><span class="x">✕</span></div>
+  </div>
+</div>
+<div><div class="lbl">Filter chips</div>
+  <div class="chips">
+    <button class="chip active">All</button>
+    <button class="chip">Beginner</button>
+    <button class="chip">Intermediate</button>
+    <button class="chip">Advanced</button>
+  </div>
+</div>
+<div><div class="lbl">Select + toggle</div>
+  <div class="row">
+    <div class="select-wrap"><select><option>Sort: Recommended</option><option>Shortest first</option></select></div>
+    <label class="toggle"><span class="switch on"><span class="knob"></span></span><span class="cap">Show completed</span></label>
+  </div>
+</div>
+</body></html>

@@ -1,0 +1,30 @@
+<!doctype html>
+<html><head><meta charset="utf-8"><link rel="stylesheet" href="../colors_and_type.css">
+<style>
+  body{margin:0;padding:20px;background:var(--bg);color:var(--text);font-family:var(--font-sans)}
+  .grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-bottom:12px}
+  .sw{border-radius:var(--radius2);border:1px solid var(--border);overflow:hidden}
+  .chip{height:60px;display:flex;align-items:flex-end;padding:8px 10px;color:#0b0b10;font-family:var(--font-mono);font-size:11px;font-weight:600}
+  .chip.d{color:#fff}
+  .meta{padding:7px 10px;display:flex;justify-content:space-between;background:var(--card)}
+  .name{font-size:12px;font-weight:600}
+  .hex{font-family:var(--font-mono);font-size:11px;color:var(--text3)}
+  h4{font-size:11px;color:var(--text3);margin:0 0 8px;font-weight:600;letter-spacing:0.3px;text-transform:uppercase}
+  .badges{display:flex;gap:8px;margin-top:4px}
+  .b{padding:4px 10px;border-radius:20px;font-size:11px;font-weight:600}
+  .bb{background:rgba(34,197,94,0.12);color:#22c55e}
+  .bi{background:rgba(245,166,35,0.12);color:#f5a623}
+  .ba{background:rgba(239,68,68,0.12);color:#ef4444}
+</style></head><body>
+<h4>Semantic — difficulty</h4>
+<div class="grid">
+  <div class="sw"><div class="chip" style="background:#22c55e">green</div><div class="meta"><span class="name">Beginner</span><span class="hex">#22c55e</span></div></div>
+  <div class="sw"><div class="chip" style="background:#f5a623">gold</div><div class="meta"><span class="name">Intermediate</span><span class="hex">#f5a623</span></div></div>
+  <div class="sw"><div class="chip" style="background:#ef4444" >red</div><div class="meta"><span class="name">Advanced</span><span class="hex">#ef4444</span></div></div>
+</div>
+<div class="badges">
+  <span class="b bb">Beginner</span>
+  <span class="b bi">Intermediate</span>
+  <span class="b ba">Advanced</span>
+</div>
+</body></html>
