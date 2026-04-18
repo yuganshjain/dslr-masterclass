@@ -263,7 +263,7 @@ function ExposureSimulator() {
   const isoVal  = ISO_VALS[iso];
   const evCam   = Math.log2((fNum * fNum) / tSec) - Math.log2(isoVal / 100);
   const sceneEV = uploaded ? 12 : SAMPLE_IMAGES[selImg].sceneEV;
-  const diff    = evCam - sceneEV;
+  const diff    = sceneEV - evCam;
 
   const brightness = Math.max(0.02, Math.min(3.5, Math.pow(2, diff)));
   const saturation = diff > 1.5 ? Math.max(0.25, 1 - (diff - 1.5) * 0.28) : diff < -2.5 ? Math.max(0.4, 1 + (diff + 2.5) * 0.15) : 1;
